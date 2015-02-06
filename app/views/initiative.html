@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Pathfinder Utilities - Initiative Tracker</title>
+    </head>
+    <body>
+        <input type="text" ng-model="creature.name">
+        <input type="number" ng-model="creature.initiative">
+        <button>Add</button>
+        <div ng-repeat="creature in creatures">
+            <span>{{ creature.name }}</span>
+        </div>
+    </body>
+</html>

@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/initiative', {
+        templateUrl: 'views/initiative.html',
+        controller: 'InitiativeCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
