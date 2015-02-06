@@ -19,4 +19,11 @@ describe('Controller: InitiativeCtrl', function () {
   it('should attach an empty list of creatures to the scope', function () {
     expect(scope.creatures.length).toBe(0);
   });
+
+  it('should be able to add to creatures', function () {
+      scope.creature = {name: 'Travis', initiative: 14};
+      scope.add();
+      expect(scope.creatures[0].name).toBe('Travis');
+      expect(scope.creatures[0].initiative).toBe(14);
+  });
 });

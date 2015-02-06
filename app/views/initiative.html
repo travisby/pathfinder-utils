@@ -6,7 +6,7 @@
     <body>
         <input type="text" ng-model="creature.name">
         <input type="number" ng-model="creature.initiative">
-        <button>Add</button>
+        <button ng-click="add()">Add</button>
         <div ng-repeat="creature in creatures">
             <span>{{ creature.name }}</span>
         </div>
