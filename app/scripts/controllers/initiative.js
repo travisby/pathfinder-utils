@@ -9,4 +9,5 @@
  */
 angular.module('pathfinderUtilsApp')
   .controller('InitiativeCtrl', function ($scope) {
+      $scope.creatures = [];
   });
