@@ -1,0 +1,11 @@
+{
+    "name": "Pathfinder Utilities",
+    "description": "Various utilities for the pathfinder RPG",
+    "website": "http://pathfinder-utilities.herokuapp.com",
+    "success_url": "/",
+    "addons": [],
+    "env": {
+        "BUILDPACK_URL": "https://github.com/nknj/heroku-buildpack-yo-angular.git"
+    },
+    "scripts": {}
+}
