@@ -7,7 +7,7 @@
         <input type="text" ng-model="creature.name">
         <input type="number" ng-model="creature.initiative">
         <button ng-click="add()">Add</button>
-        <div ng-repeat="creature in creatures">
+        <div ng-repeat="creature in creatures | orderBy:'-initiative'">
             <span>{{ creature.name }}</span>
         </div>
     </body>

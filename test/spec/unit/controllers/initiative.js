@@ -26,4 +26,10 @@ describe('Controller: InitiativeCtrl', function () {
       expect(scope.creatures[0].name).toBe('Travis');
       expect(scope.creatures[0].initiative).toBe(14);
   });
+
+  it('should clear text when creature is added', function () {
+      scope.creature = {name: 'Travis', initiative: 14};
+      scope.add();
+      expect(scope.creature).toBeFalsy();
+  });
 });

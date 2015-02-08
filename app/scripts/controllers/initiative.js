@@ -12,5 +12,6 @@ angular.module('pathfinderUtilsApp')
       $scope.creatures = [];
       $scope.add = function () {
           $scope.creatures.push($scope.creature);
+          $scope.creature = null;
       };
   });
