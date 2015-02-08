@@ -6,13 +6,19 @@ describe('Controller: InitiativeCtrl', function () {
   beforeEach(module('pathfinderUtilsApp'));
 
   var InitiativeCtrl,
-    scope;
+    scope,
+    localStorageService;
+
+    localStorageService = {
+        bind: function () {}
+    };
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     InitiativeCtrl = $controller('InitiativeCtrl', {
-      $scope: scope
+      $scope: scope,
+      localStorageService: localStorageService
     });
   }));
 

@@ -14,6 +14,9 @@ describe('Pathfinder Utils Home Page', function() {
 describe('Pathfinder Initiative Tracker Home Page', function () {
     beforeEach(function () {
         browser.get('/#initiative');
+    });
+
+    afterEach(function () {
         browser.executeScript('window.localStorage.clear();');
     });
 

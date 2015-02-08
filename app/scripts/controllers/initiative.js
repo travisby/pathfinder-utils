@@ -8,8 +8,9 @@
  * Controller of the pathfinderUtilsApp
  */
 angular.module('pathfinderUtilsApp')
-  .controller('InitiativeCtrl', function ($scope) {
+  .controller('InitiativeCtrl', function ($scope, localStorageService) {
       $scope.creatures = [];
+      localStorageService.bind($scope, 'creatures', $scope.creatures);
       $scope.add = function () {
           $scope.creatures.push($scope.creature);
           $scope.creature = null;
