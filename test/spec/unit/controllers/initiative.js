@@ -32,4 +32,18 @@ describe('Controller: InitiativeCtrl', function () {
       scope.add();
       expect(scope.creature).toBeFalsy();
   });
+
+  it('should let you remove creatures', function () {
+      scope.creatures.push({name: 'Travis', initiative: 14});
+      scope.remove(0);
+      expect(scope.creatures.length).toBe(0);
+  });
+
+  it('should remove the right creature', function () {
+      scope.creatures.push({name: 'Travis', initiative: 14});
+      scope.creatures.push({name: 'Travis2', initiative: 15});
+      scope.creatures.push({name: 'Travis3', initiative: 16});
+      scope.remove(0);
+      expect(scope.creatures[0].name).toBe('Travis2');
+  });
 });

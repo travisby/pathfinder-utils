@@ -14,4 +14,7 @@ angular.module('pathfinderUtilsApp')
           $scope.creatures.push($scope.creature);
           $scope.creature = null;
       };
+      $scope.remove = function (index) {
+          $scope.creatures.splice(index, 1);
+      };
   });

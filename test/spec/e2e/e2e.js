@@ -47,6 +47,17 @@ describe('Pathfinder Initiative Tracker Home Page', function () {
         expect(element.all(by.repeater('creature in creatures').column('name')).get(4).getText()).toBe('orc');
     });
 
+    it('should allow the user to remove a creature', function () {
+        element(by.model('creature.name')).sendKeys('troll');
+        element(by.model('creature.initiative')).sendKeys('12');
+        element(by.buttonText('Add')).click();
+        element(by.model('creature.name')).sendKeys('master');
+        element(by.model('creature.initiative')).sendKeys('19');
+        element(by.buttonText('Add')).click();
+        element.all(by.repeater('creature in creatures')).get(0).element(by.css('.remove')).click();
+        expect(element.all(by.repeater('creature in creatures')).count()).toBe(1);
+    });
+
     it('should save creatures between refreshes', function () {
         element(by.model('creature.name')).sendKeys('troll');
         element(by.model('creature.initiative')).sendKeys('12');
