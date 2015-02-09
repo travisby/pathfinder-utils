@@ -25,6 +25,7 @@ describe('Pathfinder Initiative Tracker Home Page', function () {
         element(by.model('creature.initiative')).sendKeys('17');
         element(by.buttonText('Add')).click();
         expect(element.all(by.repeater('creature in creatures').column('name')).get(0).getText()).toBe('troll');
+        expect(element.all(by.repeater('creature in creatures').column('initiative')).get(0).getText()).toBe('17');
     });
 
     it('should sort five entries by initiative', function () {

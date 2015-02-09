@@ -9,6 +9,7 @@
         <button ng-click="add()">Add</button>
         <div ng-repeat="creature in creatures | orderBy:'-initiative'">
             <span>{{ creature.name }}</span>
+            <span>{{ creature.initiative }}</span>
             <span class="remove" ng-click="remove($index)">x</span>
         </div>
     </body>
