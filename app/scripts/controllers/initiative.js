@@ -18,4 +18,8 @@ angular.module('pathfinderUtilsApp')
       $scope.remove = function (index) {
           $scope.creatures.splice(index, 1);
       };
+      // between 1 and 20
+      $scope.reroll = function(index) {
+          $scope.creatures[index].initiative = Math.floor((Math.random() * 20) + 1);
+      };
   });

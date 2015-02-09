@@ -52,4 +52,11 @@ describe('Controller: InitiativeCtrl', function () {
       scope.remove(0);
       expect(scope.creatures[0].name).toBe('Travis2');
   });
+
+  it('should reroll and not have the same initiative', function () {
+      // out of range scope :)
+      scope.creatures.push({name: 'Travis', initiative: -1});
+      scope.reroll(0);
+      expect(scope.creatures[0].initiative).not.toBe(-1);
+  });
 });

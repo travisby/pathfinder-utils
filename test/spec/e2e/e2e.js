@@ -73,4 +73,12 @@ describe('Pathfinder Initiative Tracker Home Page', function () {
     it('should begin with an empty list of creatures', function () {
         expect(element.all(by.repeater('creature in creatures')).count()).toBe(0);
     });
+
+    it('should allow user to reroll an initiative', function () {
+        element(by.model('creature.name')).sendKeys('troll');
+        element(by.model('creature.initiative')).sendKeys('-1');
+        element(by.buttonText('Add')).click();
+        element.all(by.repeater('creature in creatures')).get(0).element(by.css('.reroll')).click();
+        expect(element.all(by.repeater('creature in creatures').column('initiative')).get(0).getText()).not.toBe('-1');
+    });
 });
